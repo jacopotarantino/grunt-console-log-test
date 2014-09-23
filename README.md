@@ -41,6 +41,11 @@ Note in the example below that the `node_modules` folder is omitted. That's beca
 Run `grunt test`.
 
 ## Licenses
+
+### Disclaimer
+
+This software is strongly modeled after the grunt-merge-conflict project but has been significantly modified since the original forking. No claim is made that the softare is of similar quality or that I have any ownership over the original code.
+
 Original Sofware License: BSD
 Grunt console.log Test License: Creative-Commons Share-Alike Attribution License
 
