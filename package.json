@@ -1,6 +1,6 @@
 {
   "name": "grunt-console-log-test",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Grunt plugin for preventing you from accidentally comitting a console.log statement into your project",
   "main": "Gruntfile.js",
   "scripts": {
