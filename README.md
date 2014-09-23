@@ -1,6 +1,6 @@
 # grunt-console-log-test
 
-Grunt plugin for preventing you from accidentally comitting a console.log statement into your project.
+Grunt plugin for preventing you from accidentally comitting a console.log statement into your project. This is particularly useful in node-based projects on the server side and AngularJS-based projects client-side. In node, console.log statements are evaluated synchronously and can severely affect an applications performance. In AngularJS-based projects, it's preferable to use angular's `$log` service instead of the console API so this plugin aids in keeping code style consistent.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.0`
@@ -18,16 +18,21 @@ grunt.loadNpmTasks('grunt-console-log-test');
 ```
 
 ## merge-conflict task
-_Run this task with the `grunt consoleLogTest` command._
+_Run this task with the `grunt console-log-test` command._
+
+You'll generally just want to check all of your JS files every time but you can also configure different targets for different kinds of builds.
 
 Task targets, files and options may be specified according to the grunt [Configuring tasks](http://gruntjs.com/configuring-tasks) guide.
 
 ### Example
 
+Note in the example below that the `node_modules` folder is omitted. That's because we don't want to do console.log checking on other people's work that we don't maintain.
+
 ```js
-'consoleLogTest': {
-  files: [
-    '**/*'
+'console-log-test': {
+  test: [
+    '**/*.{js,html}',
+    '!node_modules/**/*'
   ]
 }
 ```
