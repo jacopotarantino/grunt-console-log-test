@@ -1,7 +1,8 @@
 'use strict';
 
 module.exports = function (grunt) {
-  grunt.loadNpmTasks('grunt-contrib-jshint');
+  require('load-grunt-tasks')(grunt);
+
   grunt.loadTasks('tasks');
 
   grunt.initConfig({
