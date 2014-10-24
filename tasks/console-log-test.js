@@ -24,7 +24,7 @@ module.exports = function (grunt) {
 
       next();
     }, function handleResults(failureStatus) {
-        if (!failureStatus) return;
+        if (!failureStatus) return done();
 
         grunt.warn('console.log check failed.');
       done();
