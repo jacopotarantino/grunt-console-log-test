@@ -6,6 +6,7 @@ var checkFile = require('./lib/check-file');
 module.exports = function (grunt) {
   grunt.registerMultiTask('console-log-test', 'Check for console.log statements', function () {
     var done = this.async();
+    var stop = !grunt.cli.options.all && true;
 
     grunt.util.async.forEach(this.filesSrc, function _checkFiles(file, next) {
       var fileContents, errs;
@@ -19,7 +20,7 @@ module.exports = function (grunt) {
           grunt.log.errorlns(file + ' has console.log statement at line ' + err);
         });
 
-        next();
+        next(stop);
       }
 
       next();
