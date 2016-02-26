@@ -19,7 +19,7 @@ module.exports = function (grunt) {
           grunt.log.errorlns(file + ' has console.log statement at line ' + err);
         });
 
-        next(true);
+        next();
       }
 
       next();
